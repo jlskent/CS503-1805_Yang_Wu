@@ -22,7 +22,7 @@ export class DataService {
       .toPromise()
       .then((res: any) => {
 // .next: next data
-        this._problemSource.next(res);
+        this._problemSource.next(res);``
       })
       .catch(this.handleError);
     return this._problemSource.asObservable();

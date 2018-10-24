@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb url');
+// mongoose.connect('mongodb url');
 /*
 create schema
 */
@@ -16,6 +16,6 @@ const ProblemSchema = mongoose.Schema({
 param: collection name(in DB), Schema
 it will connect to the DB collection
 */
-const ProblemModel = mongoose.model('problem-collection', ProblemSchema);
+const ProblemModel = mongoose.model('problem-collections', ProblemSchema);
 // export Model
 module.exports = ProblemModel;
