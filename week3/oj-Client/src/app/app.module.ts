@@ -11,7 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { routing} from "./app.routes";
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
 import { EditorComponent } from './components/editor/editor.component';
-// import { DataService} from "./services/data.service";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { EditorComponent } from './components/editor/editor.component';
     ProblemListComponent,
     ProblemDetailComponent,
     NewProblemComponent,
+    NavbarComponent,
     EditorComponent
   ],
   imports: [
