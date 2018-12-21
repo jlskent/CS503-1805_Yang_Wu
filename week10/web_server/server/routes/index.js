@@ -1,9 +1,11 @@
+// we get back to es5 in nodejs = =
 var express = require('express');
 var router = express.Router();
 var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  // where react app is zipped
   res.sendFile('index.html', { root: path.join(__dirname, '../../client/build') });
 });
 

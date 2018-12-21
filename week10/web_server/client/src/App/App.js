@@ -18,4 +18,5 @@ class App extends React.Component {
   }
 }
 
+// note: do not require {} for imports if we have default keyword
 export default App;
