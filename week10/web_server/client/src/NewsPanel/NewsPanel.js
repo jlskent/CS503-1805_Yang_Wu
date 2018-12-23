@@ -2,8 +2,15 @@ import './NewsPanel.css';
 
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
+
+// auth
+import Auth from '../Auth/Auth';
+
 // debounce the scroll
 import _ from 'lodash';
+
+
+
 
 class NewsPanel extends React.Component {
   constructor() {
@@ -70,7 +77,13 @@ class NewsPanel extends React.Component {
   loadMoreNews() {
     console.log('Actually triggered loading more news');
     const news_url = 'http://' + window.location.hostname + ':3000' + '/news';
-    const request = new Request(news_url, { method: 'GET' });
+    const request = new Request(news_url, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'bearer ' + Auth.getToken(),
+      },
+    });
+
 
     // browser api
     fetch(request)

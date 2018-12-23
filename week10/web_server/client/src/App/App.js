@@ -5,6 +5,11 @@ import React from 'react';
 import logo from './logo.png';
 import NewsPanel from '../NewsPanel/NewsPanel';
 
+import 'materialize-css/dist/js/materialize.js';
+
+
+
+
 class App extends React.Component {
   render() {
     return (
