@@ -68,14 +68,12 @@ def fetch_price(symbol, producer, topic_name):
         payload = {
             'Symbol': str(symbol),
             'LastTradePrice': str(price),
-            'LastTradeDateTime': str(timestamp)
+            'Timestamp': str(timestamp)
         }
         # serialization of json(convert json to str end encode)
         producer.send(topic=topic_name, value=json.dumps(payload).encode('utf-8'))
         logger.debug('Retrieved %s info %s', symbol, payload)
-        producer.send(topic=topic_name, value=json.dumps(payload).encode('utf-8'), timestamp_ms=int(time.time() * 1000))
         logger.debug('Sent price for %s to Kafka' % symbol)
-
     except KafkaTimeoutError as timeout_error:
         logger.warn('Failed to send price to kafka, caused by: %s', (timeout_error.message))
     except Exception as e:
@@ -137,4 +135,3 @@ if __name__ == '__main__':
     while True:
         schedule.run_pending()
         time.sleep(1)
-
