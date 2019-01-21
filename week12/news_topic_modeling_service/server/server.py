@@ -1,3 +1,5 @@
+"""load model, vocprocessor.. -> classify txt"""
+
 import news_classes
 import numpy as np
 import os
@@ -12,6 +14,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
 from tensorflow.contrib.learn.python.learn.estimators import model_fn
+# check if files is update
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
